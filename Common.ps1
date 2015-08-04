@@ -311,7 +311,7 @@ function EnsureAdminTemplateCseGuidsArePresent
 
     # Per Darren Mar-Elia, these GUIDs must be in alphabetical order, or GP processing will have problems.
 
-    if ($Line -notmatch '\s*(gPC(?:Machine|User)ExtensionNames)\s*=\s*\[([^\]]*)\]\s*$')
+    if ($Line -notmatch '\s*(gPC(?:Machine|User)ExtensionNames)\s*=\s*(\[([^\]]*)\])+\s*$')
     {
         throw "Malformed gpt.ini line: $Line"
     }
